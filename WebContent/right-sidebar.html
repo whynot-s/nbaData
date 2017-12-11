@@ -1,0 +1,707 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>球队数据</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body class="left-sidebar">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">NBA数据可视化<span>【数据库课程设计】</span></a></h1>
+					<script src="assets/js/jquery.min.js"></script>
+					<script src="assets/js/echarts.js"></script>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Welcome</a></li>
+							<li class="submenu">
+								<a href="#"></a>
+								<ul>
+									<li><a href="left-sidebar.html">球员数据</a></li>
+									<li><a href="right-sidebar.html">球队数据</a></li>
+									<li><a href="no-sidebar.html">比赛数据</a></li>
+									<li><a href="contact.html">视频</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="button special">Sign Up</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon fa-laptop"></span>
+						<h2><strong><!--[-->球队数据<!--]--></strong></h2>
+						<p><!--[-->30Teams<!--]--></p>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 container">
+
+							<div class="row 150%">
+								<div class="4u 12u(narrower)">
+
+									<!-- Sidebar -->
+										<div class="sidebar">
+											<section>
+												<header>
+													<h3>球队列表</h3>
+												</header>
+												<ul>
+												<li><button class="button" id="btn_team_1610612737" name="1610612737">Atlanta Hawks</button></li>          
+												<li><button class="button" id="btn_team_1610612738" name="1610612738">Boston Celtics</button></li>         
+												<li><button class="button" id="btn_team_1610612739" name="1610612739">Cleveland Cavaliers</button></li>    
+												<li><button class="button" id="btn_team_1610612740" name="1610612740">New Orleans Pelicans</button></li>   
+												<li><button class="button" id="btn_team_1610612741" name="1610612741">Chicago Bulls</button></li>          
+												<li><button class="button" id="btn_team_1610612742" name="1610612742">Dallas Mavericks</button></li>       
+												<li><button class="button" id="btn_team_1610612743" name="1610612743">Denver Nuggets</button></li>         
+												<li><button class="button" id="btn_team_1610612744" name="1610612744">Golden State Warriors</button></li>  
+												<li><button class="button" id="btn_team_1610612745" name="1610612745">Houston Rockets</button></li>        
+												<li><button class="button" id="btn_team_1610612746" name="1610612746">LA Clippers</button></li>            
+												<li><button class="button" id="btn_team_1610612747" name="1610612747">Los Angeles Lakers</button></li>     
+												<li><button class="button" id="btn_team_1610612748" name="1610612748">Miami Heat</button></li>             
+												<li><button class="button" id="btn_team_1610612749" name="1610612749">Milwaukee Bucks</button></li>        
+												<li><button class="button" id="btn_team_1610612750" name="1610612750">Minnesota Timberwolves</button></li> 
+												<li><button class="button" id="btn_team_1610612751" name="1610612751">Brooklyn Nets</button></li>          
+												<li><button class="button" id="btn_team_1610612752" name="1610612752">New York Knicks</button></li>        
+												<li><button class="button" id="btn_team_1610612753" name="1610612753">Orlando Magic</button></li>          
+												<li><button class="button" id="btn_team_1610612754" name="1610612754">Indiana Pacers</button></li>         
+												<li><button class="button" id="btn_team_1610612755" name="1610612755">Philadelphia 76ers</button></li>     
+												<li><button class="button" id="btn_team_1610612756" name="1610612756">Phoenix Suns</button></li>           
+												<li><button class="button" id="btn_team_1610612757" name="1610612757">Portland Trail Blazers</button></li> 
+												<li><button class="button" id="btn_team_1610612758" name="1610612758">Sacramento Kings</button></li>       
+												<li><button class="button" id="btn_team_1610612759" name="1610612759">San Antonio Spurs</button></li>      
+												<li><button class="button" id="btn_team_1610612760" name="1610612760">Oklahoma City Thunder</button></li>  
+												<li><button class="button" id="btn_team_1610612761" name="1610612761">Toronto Raptors</button></li>        
+												<li><button class="button" id="btn_team_1610612762" name="1610612762">Utah Jazz</button></li>              
+												<li><button class="button" id="btn_team_1610612763" name="1610612763">Memphis Grizzlies</button></li>      
+												<li><button class="button" id="btn_team_1610612764" name="1610612764">Washington Wizards</button></li>     
+												<li><button class="button" id="btn_team_1610612765" name="1610612765">Detroit Pistons</button></li>        
+												<li><button class="button" id="btn_team_1610612766" name="1610612766">Charlotte Hornets</button></li>      
+												</ul>
+												<script>
+												$(document).ready(function(){
+													$("#btn_team_1610612737").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612737").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612737").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612738").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612738").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612738").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612739").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612739").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612739").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612740").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612740").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612740").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612741").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612741").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612741").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612742").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612742").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612742").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612743").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612743").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612743").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612744").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612744").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612744").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612745").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612745").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612745").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612746").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612746").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612746").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612747").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612747").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612747").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612748").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_161061274").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612748").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612749").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612749").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612749").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612750").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612750").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612750").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612751").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612751").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612751").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612752").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612752").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612752").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612753").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612753").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612753").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612754").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612754").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612754").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612755").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612755").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612755").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612756").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612756").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612756").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612757").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612757").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612757").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612758").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612758").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612758").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612759").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612759").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612759").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612760").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612760").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612760").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612761").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612761").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612761").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612762").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612762").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612762").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612763").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612763").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612763").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612764").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612764").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612764").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612765").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612765").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612765").attr("name"));
+													})
+												})
+												$(document).ready(function(){
+													$("#btn_team_1610612766").click(function(){
+														$("#teamFigure1").html("");
+														$("#teamFigure2").html("");
+														$("#teamFigure3").html("");
+														$("#teamFigure4").html("");
+														$("#teamName").load("getTeamName?ID=" + $("#btn_team_1610612766").attr("name"));
+														$("#teamData").load("getTeamData?ID=" + $("#btn_team_1610612766").attr("name"));
+													})
+												})
+												</script>
+												<footer>
+													<ul class="buttons">
+														<li><a class="button small" id="btn_test">Load More</a></li>
+													</ul>
+												</footer>
+											</section>
+										</div>
+
+								</div>
+								<div class="8u 12u(narrower) important(narrower)">
+
+									<!-- Content -->
+										<div class="content">
+											<section>
+												<header>
+													<h3 id="teamName"></h3>
+												</header>
+												<ul id="teamData"></ul>
+												<div id="teamFigure1" style="width: 600px;height:450px;"></div>
+												<div id="teamFigure2" style="width: 600px;height:450px;"></div>
+												<div id="teamFigure3" style="width: 600px;height:450px;"></div>
+												<div id="teamFigure4" style="width: 600px;height:450px;"></div>
+												<script>
+													function loadInfo(year){
+														$.getJSON("getTeamTotal?year=" + year,
+															function(data){
+												    			var myChart1 = echarts.init(document.getElementById('teamFigure1'));
+												    			var myChart2 = echarts.init(document.getElementById('teamFigure2'));
+												    			var myChart3 = echarts.init(document.getElementById('teamFigure3'));
+												    			var myChart4 = echarts.init(document.getElementById('teamFigure4'));
+												    			var teamList = new Array("ATL", "BOS", "CLE", "NOP", "CHI", "DAL", "DEN", "GSW", "HOU", "LAC", "LAL", "MIA", "MIL", "MIN", "BKN", "NYK", "ORL", "IND", "PHI", "PHX", "POR", "SAC", "SAS", "OKC", "TOR", "UTA", "MEM", "WAS", "DET", "CHA");
+												    			var barHeight = 50;
+												    			var pts = data.PTS;
+												    			var option1 = {
+												    				    title: {
+												    				        text: '球队场均得分'
+												    				    },
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['价格范围']
+												    				    },
+												    				    grid: {
+												    				        top: 6000
+												    				    },
+												    				    angleAxis: {
+												    				        type: 'category',
+												    				        data: teamList
+												    				    },
+												    				    tooltip: {
+												    				        show: true,
+												    				        formatter: function (params) {
+												    				            var id = params.dataIndex;
+												    				            return teamList[id] + '<br>场均得分：' + pts[id];
+												    				        }
+												    				    },
+												    				    radiusAxis: {
+												    				    },
+												    				    polar: {
+												    				    },
+												    				    series: [
+												    				    {
+												    				        type: 'bar',
+												    				        data: pts.map(function (d) {
+												    				            return d;
+												    				        }),
+												    				        coordinateSystem: 'polar',
+												    				        name: '价格范围',
+												    				        stack: '最大最小值',
+												    				        color: 'grey'
+												    				    }],
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['A']
+												    				    }
+												    				};
+												    			myChart1.setOption(option1);
+												    			var ast = data.AST;
+												    			var option2 = {
+												    				    title: {
+												    				        text: '球队场均助攻'
+												    				    },
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['价格范围']
+												    				    },
+												    				    grid: {
+												    				        top: 6000
+												    				    },
+												    				    angleAxis: {
+												    				        type: 'category',
+												    				        data: teamList
+												    				    },
+												    				    tooltip: {
+												    				        show: true,
+												    				        formatter: function (params) {
+												    				            var id = params.dataIndex;
+												    				            return teamList[id] + '<br>场均助攻：' + ast[id];
+												    				        }
+												    				    },
+												    				    radiusAxis: {
+												    				    },
+												    				    polar: {
+												    				    },
+												    				    series: [
+												    				    {
+												    				        type: 'bar',
+												    				        data: ast.map(function (d) {
+												    				            return d;
+												    				        }),
+												    				        coordinateSystem: 'polar',
+												    				        name: '价格范围',
+												    				        stack: '最大最小值',
+												    				        color: 'grey'
+												    				    }],
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['A']
+												    				    }
+												    				};
+												    			myChart2.setOption(option2);
+												    			var reb = data.REB;
+												    			var option3 = {
+												    				    title: {
+												    				        text: '球队场均篮板'
+												    				    },
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['价格范围']
+												    				    },
+												    				    grid: {
+												    				        top: 6000
+												    				    },
+												    				    angleAxis: {
+												    				        type: 'category',
+												    				        data: teamList
+												    				    },
+												    				    tooltip: {
+												    				        show: true,
+												    				        formatter: function (params) {
+												    				            var id = params.dataIndex;
+												    				            return teamList[id] + '<br>场均篮板：' + reb[id];
+												    				        }
+												    				    },
+												    				    radiusAxis: {
+												    				    },
+												    				    polar: {
+												    				    },
+												    				    series: [
+												    				    {
+												    				        type: 'bar',
+												    				        data: reb.map(function (d) {
+												    				            return d;
+												    				        }),
+												    				        coordinateSystem: 'polar',
+												    				        name: '价格范围',
+												    				        stack: '最大最小值',
+												    				        color: 'grey'
+												    				    }],
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['A']
+												    				    }
+												    				};
+												    			myChart3.setOption(option3);
+												    			var blk = data.BLK;
+												    			var option4 = {
+												    				    title: {
+												    				        text: '球队场均盖帽'
+												    				    },
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['价格范围']
+												    				    },
+												    				    grid: {
+												    				        top: 6000
+												    				    },
+												    				    angleAxis: {
+												    				        type: 'category',
+												    				        data: teamList
+												    				    },
+												    				    tooltip: {
+												    				        show: true,
+												    				        formatter: function (params) {
+												    				            var id = params.dataIndex;
+												    				            return teamList[id] + '<br>场均盖帽：' + blk[id];
+												    				        }
+												    				    },
+												    				    radiusAxis: {
+												    				    },
+												    				    polar: {
+												    				    },
+												    				    series: [
+												    				    {
+												    				        type: 'bar',
+												    				        data: blk.map(function (d) {
+												    				            return d;
+												    				        }),
+												    				        coordinateSystem: 'polar',
+												    				        name: '价格范围',
+												    				        stack: '最大最小值',
+												    				        color: 'grey'
+												    				    }],
+												    				    legend: {
+												    				        show: true,
+												    				        data: ['A']
+												    				    }
+												    				};
+												    			myChart4.setOption(option4);
+														}
+														);}
+													function loadTInfo(teamId, year) {
+													    $.getJSON("getTeamFigure?teamId=" + teamId + "&year=" + year, 
+													    	function(data) {
+													    		var myChart = echarts.init(document.getElementById('teamFigure1'));
+															var option = {
+														            title: {
+														                text: '球队场均得分'
+														            },
+														            tooltip: {},
+														            legend: {
+														                data:['场均得分']
+														            },
+														            xAxis: {
+														                data: ["ATL", "BOS", "CLE", "NOP", "CHI", "DAL", "DEN", "GSW", "HOU", "LAC", "LAL", "MIA", "MIL", "MIN", "BKN", "NYK", "ORL", "IND", "PHI", "PHX", "POR", "SAC", "SAS", "OKC", "TOR", "UTA", "MEM", "WAS", "DET", "CHA"]
+														            },
+														            yAxis: {},
+														            series: [{
+														                name: '场均得分',
+														                type: 'bar',
+														                data: [data.ATL, data.BOS, data.CLE, data.NOP, data.CHI, data.DAL, data.DEN, data.GSW, data.HOU, data.LAC, data.LAL, data.MIA, data.MIL, data.MIN, data.BKN, data.NYK, data.ORL, data.IND, data.PHI, data.PHX, data.POR, data.SAC, data.SAS, data.OKC, data.TOR, data.UTA, data.MEM, data.WAS, data.DET, data.CHA]
+														            }]
+														        };
+															myChart.setOption(option);
+													    }
+													);}
+												</script>
+												<script type="text/javascript">
+													loadInfo(2016);
+												</script>
+											</section>
+										</div>
+
+								</div>
+							</div>
+						</section>
+
+					<!-- Two -->
+						<section class="wrapper style1 container special">
+							<div class="row">
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3><!--[-->This is Something<!--]--></h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<footer>
+											<ul class="buttons">
+												<li><a href="#" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3><!--[-->Also Something<!--]--></h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<footer>
+											<ul class="buttons">
+												<li><a href="#" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3><!--[-->Probably Something<!--]--></h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<footer>
+											<ul class="buttons">
+												<li><a href="#" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+							</div>
+						</section>
+
+				</article>
+
+			<!-- Footer -->
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

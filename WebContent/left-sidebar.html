@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>球员数据</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body class="left-sidebar">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">NBA数据可视化<span>【数据库课程设计】</span></a></h1>
+					<script src="assets/js/jquery.min.js"></script>
+					<script src="assets/js/echarts.js"></script>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Welcome</a></li>
+							<li class="submenu">
+								<a href="#"></a>
+								<ul>
+									<li><a href="left-sidebar.html">球员数据</a></li>
+									<li><a href="right-sidebar.html">球队数据</a></li>
+									<li><a href="no-sidebar.html">比赛数据</a></li>
+									<li><a href="contact.html">视频</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="button special">Sign Up</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon fa-laptop"></span>
+						<h2><strong><!--[-->球员数据<!--]--></strong></h2>
+						<p><!--[-->Every Player from 1946<!--]--></p>
+					</header>
+
+					<!-- One -->
+						<section class="wrapper style4 container">
+
+							<div class="row 150%">
+								<div class="4u 12u(narrower)">
+
+									<!-- Sidebar -->
+										<div class="sidebar">
+											<section>
+												<header>
+													<h3>球员列表</h3>
+												</header>
+												<ul>
+												<li><button class="button" id="btn_player_977" name="977">Kobe Bryant</button></li>
+												<li><button class="button" id="btn_player_2544" name="2544">Lebron James</button></li>
+												<li><button class="button" id="btn_player_201939" name="201939">Stephen Curry</button></li>
+												<li><button class="button" id="btn_player_202681" name="202681">Kyrie Irving</button></li>
+												<li><button class="button" id="btn_player_201566" name="201566">Russell Westbrook</button></li>
+												<li><button class="button" id="btn_player_201142" name="201142">Kevin Durant</button></li>
+												</ul>
+												<script>
+													$(document).ready(function(){
+														$("#btn_player_977").click(function(){
+															$("#playerName").load("getPlayerName?ID=" + $("#btn_player_977").attr("name"));
+															$("#playerData").load("getPlayerData?ID=" + $("#btn_player_977").attr("name"));
+														})
+													})
+													$(document).ready(function(){
+														$("#btn_player_2544").click(function(){
+															$("#playerName").load("getPlayerName?ID=" + $("#btn_player_2544").attr("name"));
+															$("#playerData").load("getPlayerData?ID=" + $("#btn_player_2544").attr("name"));
+														})
+													})
+													$(document).ready(function(){
+														$("#btn_player_201939").click(function(){
+															$("#playerName").load("getPlayerName?ID=" + $("#btn_player_201939").attr("name"));
+															$("#playerData").load("getPlayerData?ID=" + $("#btn_player_201939").attr("name"));
+														})
+													})
+													$(document).ready(function(){
+														$("#btn_player_202681").click(function(){
+															$("#playerName").load("getPlayerName?ID=" + $("#btn_player_202681").attr("name"));
+															$("#playerData").load("getPlayerData?ID=" + $("#btn_player_202681").attr("name"));
+														})
+													})
+													$(document).ready(function(){
+														$("#btn_player_201566").click(function(){
+															$("#playerName").load("getPlayerName?ID=" + $("#btn_player_201566").attr("name"));
+															$("#playerData").load("getPlayerData?ID=" + $("#btn_player_201566").attr("name"));
+														})
+													})
+													$(document).ready(function(){
+														$("#btn_player_201142").click(function(){
+															$("#playerName").load("getPlayerName?ID=" + $("#btn_player_201142").attr("name"));
+															$("#playerData").load("getPlayerData?ID=" + $("#btn_player_201142").attr("name"));
+														})
+													})
+												</script>
+												<footer>
+													<ul class="buttons">
+														<li><a class="button small" id="btn_test">Load More</a></li>
+													</ul>
+												</footer>
+											</section>
+										</div>
+
+								</div>
+								<div class="8u 12u(narrower) important(narrower)">
+
+									<!-- Content -->
+										<div class="content">
+											<section>
+												<header>
+													<h3 id="playerName"></h3>
+												</header>
+												<ul id="playerData"></ul>
+												<div id="playerFigure1" style="width: 600px;height:400px;"></div>
+												<script type="text/javascript">
+													var myChart = echarts.init(document.getElementById('playerFigure1'));
+													var option = {
+												            title: {
+												                text: 'ECharts 入门示例'
+												            },
+												            tooltip: {},
+												            legend: {
+												                data:['销量']
+												            },
+												            xAxis: {
+												                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+												            },
+												            yAxis: {},
+												            series: [{
+												                name: '销量',
+												                type: 'bar',
+												                data: [5, 20, 36, 10, 10, 20]
+												            }]
+												        };
+													myChart.setOption(option);
+												</script>
+											</section>
+										</div>
+
+								</div>
+							</div>
+						</section>
+
+					<!-- Two -->
+						<section class="wrapper style1 container special">
+							<div class="row">
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3><!--[-->This is Something<!--]--></h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<footer>
+											<ul class="buttons">
+												<li><a href="#" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3><!--[-->Also Something<!--]--></h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<footer>
+											<ul class="buttons">
+												<li><a href="#" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3><!--[-->Probably Something<!--]--></h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<footer>
+											<ul class="buttons">
+												<li><a href="#" class="button small">Learn More</a></li>
+											</ul>
+										</footer>
+									</section>
+
+								</div>
+							</div>
+						</section>
+
+				</article>
+
+			<!-- Footer -->
+				
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
