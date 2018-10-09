@@ -4,14 +4,14 @@ Project of Database Principles, a web application demonstrating data of national
 
  
 * Home Page
-![](https://github.com/whynot-s/nbaData/tree/master/figs/2.png)
+![](https://github.com/whynot-s/nbaData/raw/master/figs/2.png)
 
 * Player Data
-![](https://github.com/whynot-s/nbaData/tree/master/figs/3.png)
+![](https://github.com/whynot-s/nbaData/raw/master/figs/3.png)
 
 * Team Data
-![](https://github.com/whynot-s/nbaData/tree/master/figs/4.png)
-![](https://github.com/whynot-s/nbaData/tree/master/figs/5.png)
+![](https://github.com/whynot-s/nbaData/raw/master/figs/4.png)
+![](https://github.com/whynot-s/nbaData/raw/master/figs/5.png)
 
 * Match Data
-![](https://github.com/whynot-s/nbaData/tree/master/figs/1.png)
+![](https://github.com/whynot-s/nbaData/raw/master/figs/1.png)
